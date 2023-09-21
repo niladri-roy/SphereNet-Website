@@ -1,4 +1,11 @@
+//StyleSheets
 import './App.css';
+import './stylesheets/colors.css'
+import './stylesheets/spacing.css'
+import './stylesheets/Post.css'
+
+import { ReactLenis } from '@studio-freight/react-lenis';
+
 import { Routes , Route } from "react-router-dom";
 
 import HomePage from './pages/HomePage';
@@ -16,34 +23,39 @@ import AdminProfile from './pages/Admin/AdminProfile';
 import AdministratorRoute from './routes/administratorRoute';
 
 import VerifiedUserRoute from './routes/verifiedUserRoute';
+import PostDetailPage from './pages/PostDetailPage';
 
 
 function App() {
   return (
-    <div className='App'>
-      <Routes>
-        <Route path="/" element={<HomePage />} />      
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+    <ReactLenis root>
+      <div className='App'>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-        <Route path='/feed' element={<UserRoute />}>
-          <Route path='user-feed' element={<UserFeed />} />
-          <Route path='user-profile' element={<UserProfile />} />
-        </Route>
+          <Route path='/post/:_id' element={<PostDetailPage />} />
 
-        <Route path='/feed' element={<AdminRoute />}>
-          <Route path='admin-feed' element={<AdminFeed />} />
-          <Route path='admin-profile' element={<AdminProfile />} />
-        </Route>
+          <Route path='/feed' element={<UserRoute />}>
+            <Route path='user-feed' element={<UserFeed />} />
+            <Route path='user-profile' element={<UserProfile />} />
+          </Route>
 
-        <Route path='/feed' element={<VerifiedUserRoute /> }>
-        </Route>
+          <Route path='/feed' element={<AdminRoute />}>
+            <Route path='admin-feed' element={<AdminFeed />} />
+            <Route path='admin-profile' element={<AdminProfile />} />
+          </Route>
 
-        <Route path='/feed' element={<AdministratorRoute/> }>
-        </Route>
+          <Route path='/feed' element={<VerifiedUserRoute />}>
+          </Route>
 
-      </Routes>
-    </div>
+          <Route path='/feed' element={<AdministratorRoute />}>
+          </Route>
+
+        </Routes>
+      </div>
+    </ReactLenis>
   );
 }
 
