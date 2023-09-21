@@ -20,7 +20,7 @@ const Header = () => {
   }
 
   return (
-    <div className='header larger-shadow'>
+    <div className='header larger-shadow bg-g1'>
       <div className="header-container">
         <div className="logo">
           <a href="/">
