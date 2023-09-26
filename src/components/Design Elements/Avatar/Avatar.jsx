@@ -1,7 +1,10 @@
 import React , { useState , useEffect } from 'react';
 import './Avatar.css';
 import axios from 'axios';
-import aVa from '../../../assets/images/avatar/default-avatar.png';
+
+// import aVa from '../../../assets/images/avatar/default-avatar.png';
+import aVa from '../../../assets/images/avatar/default-avatar.jpg';
+
 import UserBadge from '../Badge/UserBadge.jsx';
 
 import { IoAtSharp } from 'react-icons/io5';
@@ -48,15 +51,15 @@ const Avatar = ({ userId }) => {
             <UserBadge userId={userId} />
           </div>
           <div className="avatar-username c-g9 pointer">
-            <p>
-              <IoAtSharp size={'1.05rem'} /> {currentUser?.username}
-            </p>
+            <div className='sH'> 
+              <IoAtSharp size={'1.02rem'} /> {currentUser?.username}
+            </div>
           </div>
         </div>
-        <div className="avatar-headline c-g9">
-          <h6>
+        <div className="avatar-headline c-g9 ">
+          <div className='sH'>
             {currentUser?.headline}
-          </h6>
+          </div>
         </div>
       </div>
     </div>
