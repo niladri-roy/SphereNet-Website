@@ -3,7 +3,7 @@ import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import axios from 'axios';
 import './badge.css';
 
-const badgeSize = '18px';
+const badgeSize = '1.2rem';
 
 const UserBadge = ({ userId }) => {
   const [badgeColor, setBadgeColor] = useState('#ffffff');
