@@ -3,8 +3,6 @@ import { IoSendOutline } from "react-icons/io5";
 import { useAuth } from '../../context/auth';
 import './Comment.css'
 import axios from 'axios';
-import aVa from '../../assets/images/avatar/default-avatar.jpg'
-
 
 const AddComments = ({ contentId , contentType}) => {
 
@@ -12,7 +10,7 @@ const AddComments = ({ contentId , contentType}) => {
   const [ content , setContent ] = useState('');
 
   //content Type : "post" , "blog" , "project" , "newsletter"
-  const PostComments = async ({ contentId , contentType }) => {
+  const postComments = async ({ contentId , contentType }) => {
     try{
       const response = await axios.post(`${process.env.REACT_APP_API}/v1/api/comments`, {
         author : auth?.user?._id,
@@ -49,7 +47,8 @@ const AddComments = ({ contentId , contentType}) => {
         }
       }
 
-      setContent('');
+      window.location.reload();
+      setContent('')
 
     } catch (error) {
       console.log(error);
@@ -58,7 +57,7 @@ const AddComments = ({ contentId , contentType}) => {
 
   const handlePostComments = async (e) => {
     e.preventDefault();
-    PostComments({ contentId , contentType });
+    postComments({ contentId , contentType });
   }
 
   return (
@@ -76,9 +75,9 @@ const AddComments = ({ contentId , contentType}) => {
               >
               </input>
             </div>
-            <div type="submit" className="comment-post-button pointer ml-1" onClick={handlePostComments}>
+            <button type="submit" className="comment-post-button pointer ml-1" onClick={handlePostComments}>
               <IoSendOutline color='var(--blue)' size='1.4rem' />
-            </div>
+            </button>
           </form>
         </div>
       </div>
