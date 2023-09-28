@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react'
 import {
   IoTrashOutline,
   IoHeartOutline,
-  IoHeartSharp,
+  // IoHeartSharp,
 } from 'react-icons/io5'
 
 import { 
   BiUpvote,
-  BiSolidUpvote,
+  // BiSolidUpvote,
   BiDownvote,
-  BiSolidDownvote,
+  // BiSolidDownvote,
   BiReply
 } from "react-icons/bi";
 import UserBadge from '../Design Elements/Badge/UserBadge';
