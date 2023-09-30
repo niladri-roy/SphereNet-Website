@@ -24,7 +24,7 @@ const ViewTags = ({ tagId }) => {
 
   return (
     <div className='tag pointer br'>
-      <p>{tags?.name}</p>
+      <div className='sH'>{tags?.name}</div>
     </div>
   )
 }
