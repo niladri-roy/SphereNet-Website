@@ -4,7 +4,7 @@ import './../stylesheets/registerPage.css'
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/Design Elements/Button/Button';
+import Button from '../components/Design Elements/Button/Button';
 
 const Register = () => {
  
@@ -52,7 +52,7 @@ const Register = () => {
     <Layout title={"Register User"}>
       <div className="register-page bg-g1 c-w layout">
         <div className="register-section container">
-          <form className="register-form br-15 p-4 bg-g2 bc regular-shadow" onSubmit={handleRegistration}>
+          <form className="register-form br p-4 bg-g2 bc regular-shadow" onSubmit={handleRegistration}>
             <div className='register-form-headlines pb-2 bb-g6 ta-cen'>
               <h3>Go Ahead and Register Yourself</h3>
               <p className=''>Find Valuable Connections Here.</p>
