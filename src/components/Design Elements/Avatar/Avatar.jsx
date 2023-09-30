@@ -43,9 +43,9 @@ const Avatar = ({ userId }) => {
       <div className="avatar-info-container">
         <div className="avatar-name-badge-username">
           <div className="avatar-name pointer">
-            <h5>
-              {currentUser?.firstName} {currentUser?.lastName}
-            </h5>
+            <h4>
+              {currentUser?.firstName}
+            </h4>
           </div>
           <div className="avatar-badge">
             <UserBadge userId={userId} />
