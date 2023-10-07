@@ -29,19 +29,19 @@ const AddComments = ({ contentId , contentType}) => {
         }
         
         if(contentType === 'blog'){
-          await axios.put(`${process.env.REACT_APP_API}/v1/api/blogs/comments/${contentId}`, {
+          await axios.put(`${process.env.REACT_APP_API}/v1/api/blogs/${contentId}/comments`, {
             commentId,
           })
         }
 
         if(contentType === 'project'){
-          await axios.put(`${process.env.REACT_APP_API}/v1/api/projects/comments/${contentId}`, {
+          await axios.put(`${process.env.REACT_APP_API}/v1/api/projects/${contentId}/comments`, {
             commentId,
           })
         }
 
         if(contentType === 'newsletter'){
-          await axios.put(`${process.env.REACT_APP_API}/v1/api/newsletters/comments/${contentId}`, {
+          await axios.put(`${process.env.REACT_APP_API}/v1/api/newsletters/${contentId}/comments`, {
             commentId,
           })
         }

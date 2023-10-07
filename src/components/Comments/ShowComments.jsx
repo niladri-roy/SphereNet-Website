@@ -56,6 +56,24 @@ const ShowComments = ({ commentId }) => {
         });
       }
 
+      if( contentType === 'blog' ){
+        await axios.patch(`${process.env.REACT_APP_API}/v1/api/blogs/${contentId}/comments`, {
+          commentId
+        });
+      }
+
+      if( contentType === 'project' ){
+        await axios.patch(`${process.env.REACT_APP_API}/v1/api/projects/${contentId}/comments`, {
+          commentId
+        });
+      }
+
+      if( contentType === 'newsletter' ){
+        await axios.patch(`${process.env.REACT_APP_API}/v1/api/newsletters/${contentId}/comments`, {
+          commentId
+        });
+      }
+
       window.location.reload();
 
     } catch(error){

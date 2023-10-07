@@ -39,7 +39,7 @@ const UserBadge = ({ userId }) => {
     } catch (error) {
       console.error(error);
     }
-  });
+  }, []);
 
   useEffect(() => {
 

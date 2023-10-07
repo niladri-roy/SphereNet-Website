@@ -51,10 +51,10 @@ button{
   --heading-6-letter-spacing: 0.009rem;
 
   /* Line Heights */
-  --heading-1-line-height: 1.1;
-  --heading-2-line-height: 1.1;
-  --heading-3-line-height: 1.1;
-  --heading-4-line-height: 1.2;
+  --heading-1-line-height: 3;
+  --heading-2-line-height: 2.5;
+  --heading-3-line-height: 2;
+  --heading-4-line-height: 1.5;
   --heading-5-line-height: 1.2;
   --heading-6-line-height: 1.2;
   --paragraph-line-height: 1.4;
@@ -223,30 +223,36 @@ textarea::placeholder
   cursor: pointer;
 }
 
-
-.flex-container{
+.flex{
   display: flex;
 }
 
+.jc-sb{
+  display: flex;
+  justify-content: space-between;
+}
+
 .ai-cen{
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .overlay {
-  height: 30rem;
   display: none;
   position: fixed;
   z-index: 5;
   top: 49%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-bottom: 2rem;
 }
 
 .overlay-content {
   position: relative;
   top: 1rem;
   width: 100%;
-  height: 26.5rem;
+  height: 23rem;
   overflow-y: auto;
 }
 
@@ -321,7 +327,13 @@ textarea::placeholder
   display: none;
 }
 
+.pr-05{
+  padding-right: .5rem;
+}
 
+.pl-05{
+  padding-left: .5rem;
+}
 
 
 

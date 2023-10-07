@@ -40,6 +40,9 @@ const Header = () => {
             </div>
           ) : (
             <div className="log">
+              <div>
+                <NavLink to="/regular-user">Home</NavLink>
+              </div>
               <div className="user-name">
                 {auth?.user?.firstName} {auth?.user?.lastName}
               </div>

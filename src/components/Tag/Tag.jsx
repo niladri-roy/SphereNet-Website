@@ -50,19 +50,27 @@ const Tag = ({ value, onChange }) => {
       className={styles.container}
     >
       <span className={styles.value}>
-        {value.map((v) => (
-          <button
-            key={v._id}
-            onClick={(e) => {
-              e.stopPropagation();
-              selectOption(v);
-            }}
-            className={styles["option-badge"]}
-          >
-            {v.name}
-            <span className={styles["remove-btn"]}>&times;</span>
-          </button>
-        ))}
+        {value.length === 0 ? (
+          <span className={styles.placeholder}>
+            <div className="c-g6 pl-1">
+              Select Tags
+            </div>
+          </span>
+        ) : (
+          value.map((v) => (
+            <button
+              key={v._id}
+              onClick={(e) => {
+                e.stopPropagation();
+                selectOption(v);
+              }}
+              className={styles["option-badge"]}
+            >
+              {v.name}
+              <span className={styles["remove-btn"]}>&times;</span>
+            </button>
+          ))
+        )}
       </span>
       <button
         onClick={(e) => {

@@ -12,6 +12,18 @@ const GetComments = ({ contentId , contentType }) => {
         const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/posts/comments/${contentId}`);
         setComments(response?.data?.comments);
       }
+      if(contentType === 'blog'){
+        const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/blogs/${contentId}/comments`);
+        setComments(response?.data?.comments);
+      }
+      if(contentType === 'project'){
+        const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/projects/${contentId}/comments`);
+        setComments(response?.data?.comments);
+      }
+      if(contentType === 'newsletter'){
+        const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/newsletters/${contentId}/comments`);
+        setComments(response?.data?.comments);
+      }
     } catch (error) {
       console.log(error);
     }

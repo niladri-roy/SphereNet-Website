@@ -34,7 +34,7 @@ const ModeratorFeed = () => {
     {
       name: 'Home',
       icon: <IoHomeOutline size={iconSize} color={iconColor} />,
-      path: 'home/post'
+      path: 'home'
     },
     {
       name: 'Profile',
