@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
@@ -14,7 +14,7 @@ const EditProfile = ({ userId }) => {
   const [headline, setHeadline] = useState('');
   const [bio, setBio] = useState('');
 
-  const getUser = async (userId) => {
+  const getUser = useCallback(async (userId) => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/users/${userId}`);
       const userData = response.data.user;
@@ -30,7 +30,7 @@ const EditProfile = ({ userId }) => {
     } catch (error) {
       console.log(error);
     }
-  }
+  }, [setUsers]);
 
   const formatDateToString = (date) => {
     return format(date, 'MM/dd/yyyy'); // Customize the format as needed

@@ -1,7 +1,7 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../context/auth'
+// import { useAuth } from '../../context/auth'
 
 import {
   IoAtSharp
@@ -10,19 +10,20 @@ import {
 const GetAllProfiles = () => {
 
   const navigate = useNavigate();
-  const [ auth ] = useAuth();
+  // const [ auth ] = useAuth();
   const [ users , setUsers ] = useState([])
 
 
-  const getAllUsers = async () => {
+  const getAllUsers = useCallback(async () => {
     try{
       const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/users`);
-      const filteredUsers = response.data.users.filter(user => user?._id !== auth?.user?._id)
-      setUsers(filteredUsers)
-    } catch (error) {
-      console.log(error)
+      setUsers(response.data.users);
+    }
+    catch (error) {
+      console.error(error)
     }
   }
+  ,[])
 
   useEffect(() => {
     getAllUsers()
