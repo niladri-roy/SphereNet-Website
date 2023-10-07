@@ -9,7 +9,7 @@ import {
 
 const ProfileEducation = ({ userId }) => {
   
-  const [ users , setUsers ] = useState([]);
+  const [ setUsers ] = useState([]);
   const [ auth ] = useAuth();
   const [ isEditEducationOpen, setIsEditEducationOpen ] = useState(false);
   const [ educationArray , setEducationArray ] = useState([]);

@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
 
 const EditProfile = ({ userId }) => {
-  const [users, setUsers] = useState({});
+  const [setUsers] = useState({});
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [location, setLocation] = useState('');

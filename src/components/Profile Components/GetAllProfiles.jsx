@@ -26,7 +26,7 @@ const GetAllProfiles = () => {
 
   useEffect(() => {
     getAllUsers()
-  }, [])
+  }, [getAllUsers])
 
   return (
     <div className='all-profiles all-users'>
