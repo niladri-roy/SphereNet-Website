@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useCallback , useState } from 'react'
 import axios from 'axios'
 import { useAuth } from '../../context/auth';
 import AddProfileEducation from './AddProfileEducation';
@@ -22,25 +22,25 @@ const ProfileEducation = ({ userId }) => {
     setIsEditEducationOpen(false);
   }
 
-  const getUserById = async (userId) => {
+  const getUserById = useCallback(async (userId) => {
     try{
       const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/users/${userId}`);
       setUsers(response.data.user);
-
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error)
     }
-  }
+  } ,[setUsers])
 
-  const getUserEducation = async (userId) => {
+  const getUserEducation = useCallback(async (userId) => {
     try{
       const response = await axios.get(`${process.env.REACT_APP_API}/v1/api/users/educations/${userId}`);
-      setEducationArray(response.data.education);
+      setEducationArray(response.data.educations);
 
     } catch (error) {
       console.error(error)
     }
-  }
+  } ,[])
 
   const handleEducationsDelete = async (educationId) => {
     try{
@@ -73,13 +73,13 @@ const ProfileEducation = ({ userId }) => {
     if(userId){
       getUserById(userId);
     }
-  }, [userId]);
+  }, [userId , getUserById]);
 
   useEffect(() => {
     if(userId){
       getUserEducation(userId);
     }
-  }, [userId]);
+  }, [userId , getUserEducation]);
 
   return (
     <div className='profile-education'>

@@ -40,7 +40,7 @@ const EditProfile = ({ userId }) => {
     if (userId) {
       getUser(userId);
     }
-  }, [userId]);
+  }, [userId , getUser]);
 
   const handleUserUpdate = async (e) => {
     e.preventDefault();
