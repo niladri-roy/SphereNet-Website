@@ -1,0 +1,134 @@
+.banner-image {
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px 7px 0px 0px;
+  position: relative;
+}
+
+.profile-image {
+  width: 9rem;
+  height: 9rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid var(--text-white);
+  margin-top: -7rem;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.profile-image-and-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-menus {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-user-name-and-badge {
+  display: flex;
+  gap: .1rem;
+}
+
+.edit-profile-button {
+  border: 2px solid var(--grey-6);
+  padding: .3rem .9rem;
+  transition: all .3s ease-in-out;
+}
+
+.edit-profile-button:hover {
+  border: 2px solid var(--green);
+  background-color: var(--grey-3);
+  color: white;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary{
+  border: 2px solid var(--grey-6);
+  padding: .3rem .9rem;
+  transition: all .3s ease-in-out;
+}
+
+.btn-primary:hover {
+  border: 2px solid var(--green);
+  background-color: var(--grey-3);
+  color: white;
+}
+
+.profile-user-location-birth-joined{
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+
+.profile-education-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-education-content-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.profile-card-banner-image{
+  width: 100%;
+  height: 5rem;
+}
+
+.profile-card-banner-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: .4rem .4rem 0 0;
+}
+
+.profile-card-profile-image{
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 2px solid var(--text-white);
+  margin-top: -3rem;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.profile-card-profile-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}

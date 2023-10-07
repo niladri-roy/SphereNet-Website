@@ -1,0 +1,16 @@
+.feed-menus {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 4;
+}
+
+.feed-menu {
+  width: 100%;
+  padding: .5rem .2rem;
+}
+
+.feed-menus .active {
+  border: 1.5px solid var(--grey-4);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}

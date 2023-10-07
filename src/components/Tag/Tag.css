@@ -1,0 +1,16 @@
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.tag{
+  border: solid 2px var(--grey-9);
+  padding: .3rem .5rem;
+  transition: all .2s ease-in-out;
+}
+
+.tag:hover{
+  border: solid 2px var(--green);
+}

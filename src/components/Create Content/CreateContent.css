@@ -1,0 +1,11 @@
+.content {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.content.show {
+  display: block;
+  max-height: 1000px;
+}
